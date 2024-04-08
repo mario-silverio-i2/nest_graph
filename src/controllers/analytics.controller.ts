@@ -1,5 +1,5 @@
 import { ApiAuthGuard } from '../auth/api-auth.guard';
-import { Controller, Get, Post, Body, UseGuards } from '@nestjs/common';
+import { Controller, Get, UseGuards } from '@nestjs/common';
 import { AnalyticsService } from '../services/analytics.service';
 
 @Controller('analytics')
@@ -18,8 +18,8 @@ export class AnalyticsController {
     return this.analyticsService.getMockDataTable();
   }
 
-  @Post('mockdata')
-  async findByFilter(@Body() filterCriteria: Promise<any>) {
-    return `Filtrando dados com os seguintes critérios: ${JSON.stringify(filterCriteria)}`;
-  }
+  // @Post('mockdata')
+  // async findByFilter(@Body() filterCriteria: Promise<any>) {
+  //   return `Filtrando dados com os seguintes critérios: ${JSON.stringify(filterCriteria)}`;
+  // }
 }
